@@ -1,0 +1,29 @@
+# Ignora artefatos de build para não copiá-los para dentro da imagem
+target/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Documentação (não precisa estar dentro da imagem)
+README.md
