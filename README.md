@@ -31,6 +31,9 @@ A aplicação segue separação clara de responsabilidades entre **Controllers**
 - [Autores](#-autores)
 
 ---
+## Repositório do DockerHub
+https://hub.docker.com/r/sskah/euroone-microsservices
+---
 
 ## 🚀 Tecnologias utilizadas
 
