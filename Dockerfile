@@ -11,5 +11,11 @@ COPY --from=build /opt/app/target/app.jar /opt/app/app.jar
 # ex.:  docker run -e SPRING_PROFILES_ACTIVE=prd euroone-api:1.0.0
 ENV SPRING_PROFILES_ACTIVE=dev
 
+# Locale/encoding UTF-8: sem isso a JVM no Alpine assume ASCII e a
+# acentuacao gravada no banco fica corrompida.
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8"
+
 EXPOSE 8080
-CMD [ "java", "-Dspring.profiles.active=${SPRING_PROFILES_ACTIVE}", "-jar", "app.jar" ]
+CMD [ "java", "-Dfile.encoding=UTF-8", "-Dspring.profiles.active=${SPRING_PROFILES_ACTIVE}", "-jar", "app.jar" ]
